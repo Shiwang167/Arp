@@ -23,13 +23,46 @@
 body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #101010 0%, #1f1f1f 100%);
+  background: linear-gradient(135deg, #1a0a14 0%, #2d1025 35%, #1c0f2e 70%, #140a1e 100%);
   color: var(--text);
   min-height: 100vh;
   display: grid;
   place-items: center;
   padding: 20px;
   overflow-x: hidden;
+  position: relative;
+}
+
+/* ================================ */
+/* Editor Background Emojis         */
+/* ================================ */
+
+.editor-bg-emojis {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bg-emoji {
+  position: absolute;
+  opacity: 0.12;
+  animation: bgFloat linear infinite;
+  pointer-events: none;
+  filter: blur(1px);
+}
+
+@keyframes bgFloat {
+  0% {
+    transform: translateY(110vh) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(50vh) rotate(180deg) scale(1.15);
+  }
+  100% {
+    transform: translateY(-10vh) rotate(360deg) scale(1);
+  }
 }
 
 /* ================================ */

@@ -309,6 +309,7 @@ window.onload = () => {
     const landingPage = document.getElementById("landingPage");
     const openBtn = document.getElementById("openEditorBtn");
     const editorApp = document.getElementById("editorApp");
+    const editorBg = document.getElementById("editorBgEmojis");
     const landingHeartsContainer = document.getElementById("landingHearts");
 
     // Spawn floating hearts & butterflies on landing page
@@ -324,15 +325,32 @@ window.onload = () => {
         landingHeartsContainer.appendChild(el);
     }
 
+    // Spawn romantic background emojis for editor page
+    function spawnEditorEmojis() {
+        const bgEmojis = ["❤️", "🦋", "💕", "🌹", "✨", "💖", "🌸", "💗", "🦋", "💫"];
+        for (let i = 0; i < 20; i++) {
+            const el = document.createElement("div");
+            el.className = "bg-emoji";
+            el.textContent = bgEmojis[Math.floor(Math.random() * bgEmojis.length)];
+            el.style.left = Math.random() * 100 + "vw";
+            el.style.fontSize = (20 + Math.random() * 30) + "px";
+            el.style.animationDuration = (12 + Math.random() * 18) + "s";
+            el.style.animationDelay = (Math.random() * 15) + "s";
+            editorBg.appendChild(el);
+        }
+    }
+
     // Open editor on button click
     openBtn.addEventListener("click", () => {
         landingPage.classList.add("fade-out");
 
         setTimeout(() => {
             landingPage.style.display = "none";
+            editorBg.classList.remove("hidden");
             editorApp.classList.remove("hidden");
             editorApp.style.opacity = "0";
             editorApp.style.transition = "opacity 0.8s ease";
+            spawnEditorEmojis();
             setTimeout(() => {
                 editorApp.style.opacity = "1";
             }, 50);
