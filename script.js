@@ -302,13 +302,40 @@ function createButterflies() {
 }
 
 // ----------------------------
-// Fade-in Animation
+// Landing Page
 // ----------------------------
 
 window.onload = () => {
-    document.body.style.opacity = "0";
-    document.body.style.transition = "opacity 1s";
-    setTimeout(() => {
-        document.body.style.opacity = "1";
-    }, 100);
+    const landingPage = document.getElementById("landingPage");
+    const openBtn = document.getElementById("openEditorBtn");
+    const editorApp = document.getElementById("editorApp");
+    const landingHeartsContainer = document.getElementById("landingHearts");
+
+    // Spawn floating hearts & butterflies on landing page
+    const emojis = ["❤️", "🦋", "💕", "🌸", "💗", "🦋", "💖", "🦋"];
+    for (let i = 0; i < 25; i++) {
+        const el = document.createElement("div");
+        el.className = "landing-float";
+        el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        el.style.left = Math.random() * 100 + "vw";
+        el.style.fontSize = (16 + Math.random() * 24) + "px";
+        el.style.animationDuration = (8 + Math.random() * 12) + "s";
+        el.style.animationDelay = (Math.random() * 10) + "s";
+        landingHeartsContainer.appendChild(el);
+    }
+
+    // Open editor on button click
+    openBtn.addEventListener("click", () => {
+        landingPage.classList.add("fade-out");
+
+        setTimeout(() => {
+            landingPage.style.display = "none";
+            editorApp.classList.remove("hidden");
+            editorApp.style.opacity = "0";
+            editorApp.style.transition = "opacity 0.8s ease";
+            setTimeout(() => {
+                editorApp.style.opacity = "1";
+            }, 50);
+        }, 800);
+    });
 };

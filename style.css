@@ -29,6 +29,135 @@ body {
   display: grid;
   place-items: center;
   padding: 20px;
+  overflow-x: hidden;
+}
+
+/* ================================ */
+/* Landing Page                     */
+/* ================================ */
+
+.landing-page {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #ffe0ec 0%, #ffc1d6 30%, #ffb3c6 60%, #ffd6e7 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20000;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  overflow: hidden;
+}
+
+.landing-page.fade-out {
+  opacity: 0;
+  transform: scale(1.05);
+  pointer-events: none;
+}
+
+.landing-hearts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.landing-float {
+  position: absolute;
+  font-size: 24px;
+  opacity: 0.4;
+  animation: floatUp linear infinite;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-10vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.landing-content {
+  text-align: center;
+  z-index: 2;
+  animation: fadeInUp 1s ease 0.3s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.folder-icon-big {
+  font-size: 80px;
+  margin-bottom: 16px;
+  animation: pulse 2s ease-in-out infinite;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.landing-title {
+  font-size: 32px;
+  color: #5a2d3e;
+  margin: 0 0 10px;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+
+.landing-subtitle {
+  font-size: 16px;
+  color: #8b5a6e;
+  margin: 0 0 36px;
+  font-style: italic;
+}
+
+.landing-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #e74c7c, #c2185b);
+  color: white;
+  border: none;
+  padding: 16px 36px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 28px rgba(231, 76, 124, 0.45);
+  transition: transform 0.25s, box-shadow 0.25s;
+  animation: fadeInUp 1s ease 0.7s both;
+}
+
+.landing-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 36px rgba(231, 76, 124, 0.6);
+}
+
+.landing-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.landing-btn-icon {
+  font-size: 22px;
 }
 
 .app-window {

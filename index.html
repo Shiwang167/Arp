@@ -8,7 +8,22 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="app-window">
+    <!-- Landing Page -->
+    <div class="landing-page" id="landingPage">
+      <div class="landing-hearts" id="landingHearts"></div>
+      <div class="landing-content">
+        <div class="folder-icon-big">📂</div>
+        <h1 class="landing-title">A message from Shiwang</h1>
+        <p class="landing-subtitle">There's something he wants to say...</p>
+        <button class="landing-btn" id="openEditorBtn">
+          <span class="landing-btn-icon">💌</span>
+          <span>Open Apology Folder</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- VS Code Editor (hidden initially) -->
+    <div class="app-window hidden" id="editorApp">
       <header class="titlebar">
         <div class="window-controls">
           <span class="control red"></span>
