@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A heartfelt apology written in Java code, presented in a VS Code-themed IDE." />
+    <title>Apology.java - VS Code</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-window">
+      <header class="titlebar">
+        <div class="window-controls">
+          <span class="control red"></span>
+          <span class="control yellow"></span>
+          <span class="control green"></span>
+        </div>
+        <div class="titlebar-title">Apology.java</div>
+        <div class="titlebar-actions">
+          <span>⌘</span>
+          <span>⎇</span>
+        </div>
+      </header>
+
+      <div class="workspace-shell">
+        <aside class="activity-bar" aria-label="Activity bar">
+          <button class="icon active" aria-label="Explorer">⌂</button>
+          <button class="icon" aria-label="Search">⌕</button>
+          <button class="icon" aria-label="Source Control">◧</button>
+          <button class="icon" aria-label="Run and Debug">▶</button>
+          <button class="icon" aria-label="Extensions">◫</button>
+        </aside>
+
+        <aside class="sidebar" aria-label="Explorer">
+          <div class="sidebar-heading">Explorer</div>
+          <div class="tree-item folder active">
+            <span class="folder-icon">📂</span>
+            <span>Apology</span>
+          </div>
+          <div class="tree-item file selected">
+            <span class="file-icon">📄</span>
+            <span>Apology.java</span>
+          </div>
+        </aside>
+
+        <div class="editor-column">
+          <div class="editor-pane">
+            <div class="editor-tabs">
+              <div class="tab active">Apology.java</div>
+              <div class="tab">README.md</div>
+            </div>
+
+            <div class="editor-content">
+              <div class="line-numbers" aria-hidden="true"></div>
+              <pre><code>
+<span class="keyword">class</span> <span class="class-name">Person</span> {
+    <span class="type">String</span> name;
+    <span class="type">boolean</span> isStillAngry;
+    <span class="type">boolean</span> isStillNotTalking;
+}
+
+<span class="keyword">public</span> <span class="keyword">class</span> <span class="class-name">Apology</span> {
+
+    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="type">String</span>[] args) {
+
+        <span class="class-name">Person</span> Arp = <span class="keyword">new</span> <span class="class-name">Person</span>();
+
+        Arp.name = <span class="string">"Arp🦋"</span>;
+
+        Arp.isStillAngry = <span class="keyword">true</span>;
+
+        Arp.isStillNotTalking = <span class="keyword">true</span>;
+
+        <span class="keyword">if</span> (Arp.isStillAngry &amp;&amp; Arp.isStillNotTalking) {
+
+            <span class="class-name">System</span>.out.println(
+                <span class="string">"Dear "</span> + Arp.name + <span class="string">",\n\n"</span> +
+
+                <span class="string">"I am really sorry. 🥺\n\n"</span> +
+
+                <span class="string">"I tried to stay away because I thought it would be better, "</span> +
+
+                <span class="string">"but sometimes I still worry about you and wonder how you're doing.\n\n"</span> +
+
+                <span class="string">"I don't want to disturb you or make things harder. "</span> +
+
+                <span class="string">"I just miss hearing you, even if it's only for a moment like before.\n\n"</span> +
+
+                <span class="string">"I am truly sorry for that day and for everything that hurt you. "</span> +
+
+                <span class="string">"I still want to send you those snaps before your exams and to wake you up in the morning. "</span> +
+
+                <span class="string">"Please don't be rude to me."</span>
+            );
+
+        } <span class="keyword">else</span> {
+
+            <span class="class-name">System</span>.out.println(
+                <span class="string">"Please unblock me 🥺"</span>
+            );
+
+        }
+
+        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">1</span>; i++) {
+            <span class="class-name">System</span>.out.println(<span class="string">"Sorry for that day. I spoke more than I should have."</span>);
+        }
+    }
+}
+              </code></pre>
+            </div>
+          </div>
+
+          <div class="terminal-pane">
+            <div class="terminal-header">
+              <span>TERMINAL</span>
+              <button class="run-btn" id="runBtn">▶ Run</button>
+            </div>
+            <div class="terminal-output" id="terminalOutput">
+              <span class="prompt">$</span> <span class="terminal-ready">Ready to run Apology.java...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="status-bar">
+        <span>Java</span>
+        <span>UTF-8</span>
+        <span>Spaces: 4</span>
+        <span class="status-clock" id="status-clock">--:--</span>
+      </footer>
+    </div>
+
+    <!-- Popup Dialog -->
+    <div class="popup-overlay hidden" id="popup">
+      <div class="popup-card">
+        <div class="popup-emoji">🥺</div>
+        <h2 class="popup-title">Will you forgive me and unblock me please? 🥺</h2>
+        <p class="popup-subtitle">I'm really, truly sorry...</p>
+        <div class="popup-buttons">
+          <button class="popup-btn popup-btn-yes" id="yesBtn">❤️ Yes, I forgive you</button>
+          <button class="popup-btn popup-btn-no" id="noBtn">💔 Not yet...</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
