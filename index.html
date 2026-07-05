@@ -1,74 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="A heartfelt apology written in Java code, presented in a VS Code-themed IDE." />
-    <title>Apology.java - VS Code</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- Landing Page -->
-    <div class="landing-page" id="landingPage">
-      <div class="landing-hearts" id="landingHearts"></div>
-      <div class="landing-content">
-        <div class="folder-icon-big">📂</div>
-        <h1 class="landing-title">A message from your idiot</h1>
-        <p class="landing-subtitle">There's something he wants to say...</p>
-        <button class="landing-btn" id="openEditorBtn">
-          <span class="landing-btn-icon">💌</span>
-          <span>Open Apology Folder</span>
-        </button>
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A heartfelt apology written in Java code, presented in a VS Code-themed IDE." />
+  <title>Apology.java - VS Code</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Landing Page -->
+  <div class="landing-page" id="landingPage">
+    <div class="landing-hearts" id="landingHearts"></div>
+    <div class="landing-content">
+      <div class="folder-icon-big">📂</div>
+      <h1 class="landing-title">A message from your idiot</h1>
+      <p class="landing-subtitle">There's something he wants to say...</p>
+      <button class="landing-btn" id="openEditorBtn">
+        <span class="landing-btn-icon">💌</span>
+        <span>Open Apology Folder</span>
+      </button>
     </div>
+  </div>
 
-    <!-- VS Code Editor (hidden initially) -->
-    <div class="editor-bg-emojis hidden" id="editorBgEmojis"></div>
-    <div class="app-window hidden" id="editorApp">
-      <header class="titlebar">
-        <div class="window-controls">
-          <span class="control red"></span>
-          <span class="control yellow"></span>
-          <span class="control green"></span>
+  <!-- VS Code Editor (hidden initially) -->
+  <div class="editor-bg-emojis hidden" id="editorBgEmojis"></div>
+  <div class="app-window hidden" id="editorApp">
+    <header class="titlebar">
+      <div class="window-controls">
+        <span class="control red"></span>
+        <span class="control yellow"></span>
+        <span class="control green"></span>
+      </div>
+      <div class="titlebar-title">Apology.java</div>
+      <div class="titlebar-actions">
+        <span>⌘</span>
+        <span>⎇</span>
+      </div>
+    </header>
+
+    <div class="workspace-shell">
+      <aside class="activity-bar" aria-label="Activity bar">
+        <button class="icon active" aria-label="Explorer">⌂</button>
+        <button class="icon" aria-label="Search">⌕</button>
+        <button class="icon" aria-label="Source Control">◧</button>
+        <button class="icon" aria-label="Run and Debug">▶</button>
+        <button class="icon" aria-label="Extensions">◫</button>
+      </aside>
+
+      <aside class="sidebar" aria-label="Explorer">
+        <div class="sidebar-heading">Explorer</div>
+        <div class="tree-item folder active">
+          <span class="folder-icon">📂</span>
+          <span>Apology</span>
         </div>
-        <div class="titlebar-title">Apology.java</div>
-        <div class="titlebar-actions">
-          <span>⌘</span>
-          <span>⎇</span>
+        <div class="tree-item file selected">
+          <span class="file-icon">📄</span>
+          <span>Apology.java</span>
         </div>
-      </header>
+      </aside>
 
-      <div class="workspace-shell">
-        <aside class="activity-bar" aria-label="Activity bar">
-          <button class="icon active" aria-label="Explorer">⌂</button>
-          <button class="icon" aria-label="Search">⌕</button>
-          <button class="icon" aria-label="Source Control">◧</button>
-          <button class="icon" aria-label="Run and Debug">▶</button>
-          <button class="icon" aria-label="Extensions">◫</button>
-        </aside>
-
-        <aside class="sidebar" aria-label="Explorer">
-          <div class="sidebar-heading">Explorer</div>
-          <div class="tree-item folder active">
-            <span class="folder-icon">📂</span>
-            <span>Apology</span>
+      <div class="editor-column">
+        <div class="editor-pane">
+          <div class="editor-tabs">
+            <div class="tab active">Apology.java</div>
+            <div class="tab">README.md</div>
           </div>
-          <div class="tree-item file selected">
-            <span class="file-icon">📄</span>
-            <span>Apology.java</span>
-          </div>
-        </aside>
 
-        <div class="editor-column">
-          <div class="editor-pane">
-            <div class="editor-tabs">
-              <div class="tab active">Apology.java</div>
-              <div class="tab">README.md</div>
-            </div>
-
-            <div class="editor-content">
-              <div class="line-numbers" aria-hidden="true"></div>
-              <pre><code>
+          <div class="editor-content">
+            <div class="line-numbers" aria-hidden="true"></div>
+            <pre><code>
 <span class="keyword">class</span> <span class="class-name">Person</span> {
     <span class="type">String</span> name;
     <span class="type">boolean</span> isStillAngry;
@@ -123,58 +125,62 @@
     }
 }
               </code></pre>
-            </div>
-          </div>
-
-          <div class="terminal-pane">
-            <div class="terminal-header">
-              <span>TERMINAL</span>
-              <button class="run-btn" id="runBtn">▶ Run</button>
-            </div>
-            <div class="terminal-output" id="terminalOutput">
-              <span class="prompt">$</span> <span class="terminal-ready">Ready to run Apology.java...</span>
-            </div>
           </div>
         </div>
-      </div>
 
-      <footer class="status-bar">
-        <span>Java</span>
-        <span>UTF-8</span>
-        <span>Spaces: 4</span>
-        <span class="status-clock" id="status-clock">--:--</span>
-      </footer>
-    </div>
-
-    <!-- Popup Dialog -->
-    <div class="popup-overlay hidden" id="popup">
-      <div class="popup-card">
-        <div class="popup-emoji">🥺</div>
-        <h2 class="popup-title">Will you forgive me and unblock me please? 🥺</h2>
-        <p class="popup-subtitle">I'm really, truly sorry...</p>
-        <div class="popup-buttons">
-          <button class="popup-btn popup-btn-yes" id="yesBtn">❤️ Yes, I forgive you</button>
-          <button class="popup-btn popup-btn-no" id="noBtn">💔 Not yet...</button>
+        <div class="terminal-pane">
+          <div class="terminal-header">
+            <span>TERMINAL</span>
+            <button class="run-btn" id="runBtn">▶ Run</button>
+          </div>
+          <div class="terminal-output" id="terminalOutput">
+            <span class="prompt">$</span> <span class="terminal-ready">Ready to run Apology.java...</span>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Farewell Popup -->
-    <div class="farewell-overlay hidden" id="farewellPopup">
-      <div class="farewell-card">
-        <div class="farewell-butterflies" id="farewellButterflies"></div>
-        <div class="farewell-emoji">🦋</div>
-        <h2 class="farewell-title">A Message From My Heart</h2>
-        <div class="farewell-message">
-          <p>No matter what you choose, just believe in yourself. You are the best best bestest girl in the world and you deserve everything, every happiness, and you'll surely achieve everything what you dream of.</p>
-          <p>I don't know about the world but maybe you forget everyone, maybe you remember anything about us or all these, but you will always be there in my prayers and I would always be there to help you.</p>
-          <p class="farewell-highlight">You are my butterfly. 🦋</p>
-          <p class="farewell-smile">And I know you are smiling while reading this 😊</p>
-        </div>
-        <button class="farewell-close-btn" id="farewellCloseBtn">💖 Close</button>
+    <footer class="status-bar">
+      <span>Java</span>
+      <span>UTF-8</span>
+      <span>Spaces: 4</span>
+      <span class="status-clock" id="status-clock">--:--</span>
+    </footer>
+  </div>
+
+  <!-- Popup Dialog -->
+  <div class="popup-overlay hidden" id="popup">
+    <div class="popup-card">
+      <div class="popup-emoji">🥺</div>
+      <h2 class="popup-title">Will you forgive me and unblock me please? 🥺</h2>
+      <p class="popup-subtitle">I'm really, truly sorry...</p>
+      <div class="popup-buttons">
+        <button class="popup-btn popup-btn-yes" id="yesBtn">❤️ Yes, I forgive you</button>
+        <button class="popup-btn popup-btn-no" id="noBtn">💔 Not yet...</button>
       </div>
     </div>
+  </div>
 
-    <script src="script.js"></script>
-  </body>
+  <!-- Farewell Popup -->
+  <div class="farewell-overlay hidden" id="farewellPopup">
+    <div class="farewell-card">
+      <div class="farewell-butterflies" id="farewellButterflies"></div>
+      <div class="farewell-emoji">🦋</div>
+      <h2 class="farewell-title">A Message From My Heart</h2>
+      <div class="farewell-message">
+        <p>No matter what you choose, just believe in yourself. You are the best best bestest girl in the world and you
+          deserve everything, every happiness, and you'll surely achieve everything what you dream of.</p>
+        <p>I don't know about the world but maybe you would forget everyone, maybe you won't remember anything about us
+          or all these, but you will always be there in my prayers and I would always be there for you. I would never
+          judge of you arp....</p>
+        <p class="farewell-highlight">You are my butterfly. 🦋</p>
+        <p class="farewell-smile">And I know you are smiling while reading this 😊</p>
+      </div>
+      <button class="farewell-close-btn" id="farewellCloseBtn">💖 Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
 </html>

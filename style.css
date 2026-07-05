@@ -386,7 +386,7 @@ code {
 /* ================================ */
 
 .terminal-pane {
-  height: 220px;
+  height: 320px;
   border-top: 1px solid var(--border);
   background: #181818;
   display: flex;
@@ -635,7 +635,7 @@ code {
   }
 
   .terminal-pane {
-    height: 150px;
+    height: 240px;
   }
 }
 
