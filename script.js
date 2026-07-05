@@ -8,6 +8,9 @@ const terminal = document.getElementById("terminalOutput");
 const popup = document.getElementById("popup");
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
+const farewellPopup = document.getElementById("farewellPopup");
+const farewellCloseBtn = document.getElementById("farewellCloseBtn");
+const farewellButterflies = document.getElementById("farewellButterflies");
 
 let running = false;
 
@@ -154,7 +157,7 @@ runBtn.addEventListener("click", async () => {
     await line("");
 
     await line(
-        "I am truly sorry for that day and for everything that hurt you. I still want to send you those snaps before your exams and to wake up you in the morning. Please don't be rude to me",
+        "I am truly sorry for that day and for everything that hurt you. I still want to send you those snaps before your exams and to wake up you in the morning. Please don't be rude to me. It doesn't feel good you being rude to me. You know whenever I see you I don't know why i can understand anything you are going through, mujhe pata hai rehta hai pr pata nai kyu and kaise, maybe hm dono shyd ek jaise ho our thought process or our vibes.",
         18
     );
     await sleep(1200);
@@ -209,6 +212,9 @@ yesBtn.addEventListener("click", async () => {
 
     createHearts();
     createButterflies();
+
+    await sleep(1500);
+    showFarewellLink();
 });
 
 // 💔 NOT YET BUTTON
@@ -221,14 +227,58 @@ noBtn.addEventListener("click", async () => {
     await line("No worries...", 25);
     await sleep(800);
     await line("");
-    await line("Shiwang understands.", 22);
+    await line("I understand.", 22);
     await sleep(800);
     await line("");
-    await line("He'll keep respecting your space.", 20);
+    await line("I will keep respecting your space.", 20);
     await sleep(800);
     await line("");
     await line("Hope = true ❤️", 25);
     await sleep(800);
+
+    await sleep(1000);
+    showFarewellLink();
+});
+
+// =======================================
+// Farewell Message Link & Popup
+// =======================================
+
+function showFarewellLink() {
+    const linkContainer = document.createElement("div");
+    linkContainer.style.textAlign = "center";
+    linkContainer.style.marginTop = "16px";
+
+    const link = document.createElement("span");
+    link.className = "farewell-link";
+    link.textContent = "💌 Wait, before leaving click here for a message";
+    link.addEventListener("click", () => {
+        spawnFarewellButterflies();
+        farewellPopup.classList.remove("hidden");
+    });
+
+    linkContainer.appendChild(link);
+    terminal.appendChild(linkContainer);
+    terminal.scrollTop = terminal.scrollHeight;
+}
+
+function spawnFarewellButterflies() {
+    farewellButterflies.innerHTML = "";
+    const emojis = ["🦋", "💖", "✨", "🌸", "💕"];
+    for (let i = 0; i < 12; i++) {
+        const el = document.createElement("div");
+        el.className = "farewell-float";
+        el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        el.style.left = Math.random() * 100 + "%";
+        el.style.fontSize = (14 + Math.random() * 18) + "px";
+        el.style.animationDuration = (6 + Math.random() * 8) + "s";
+        el.style.animationDelay = (Math.random() * 4) + "s";
+        farewellButterflies.appendChild(el);
+    }
+}
+
+farewellCloseBtn.addEventListener("click", () => {
+    farewellPopup.classList.add("hidden");
 });
 
 // =======================================

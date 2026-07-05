@@ -671,3 +671,190 @@ code {
     padding: 8px 12px;
   }
 }
+
+/* ================================ */
+/* Farewell Message Link            */
+/* ================================ */
+
+.farewell-link {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 22px;
+  background: linear-gradient(135deg, rgba(231, 76, 124, 0.15), rgba(156, 39, 176, 0.15));
+  border: 1px solid rgba(231, 76, 124, 0.35);
+  border-radius: 30px;
+  color: #ff8fb1;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.8s ease both, gentlePulse 2.5s ease-in-out infinite;
+  letter-spacing: 0.02em;
+}
+
+.farewell-link:hover {
+  background: linear-gradient(135deg, rgba(231, 76, 124, 0.3), rgba(156, 39, 176, 0.3));
+  border-color: rgba(231, 76, 124, 0.6);
+  color: #ffb8d0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(231, 76, 124, 0.3);
+}
+
+@keyframes gentlePulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(231, 76, 124, 0.15); }
+  50% { box-shadow: 0 0 18px rgba(231, 76, 124, 0.35); }
+}
+
+/* ================================ */
+/* Farewell Popup Overlay           */
+/* ================================ */
+
+.farewell-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 5, 15, 0.8);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 15000;
+  animation: fadeIn 0.5s ease;
+}
+
+.farewell-overlay.hidden {
+  display: none;
+}
+
+.farewell-card {
+  position: relative;
+  background: linear-gradient(155deg, #2a1a2e 0%, #1a1025 40%, #251530 70%, #1e0f28 100%);
+  border: 1px solid rgba(231, 76, 124, 0.25);
+  border-radius: 24px;
+  padding: 44px 40px 36px;
+  text-align: center;
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.6),
+    0 0 60px rgba(231, 76, 124, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  max-width: 480px;
+  width: 92%;
+  animation: popIn 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+}
+
+.farewell-butterflies {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.farewell-float {
+  position: absolute;
+  opacity: 0.2;
+  animation: farewellDrift linear infinite;
+  pointer-events: none;
+}
+
+@keyframes farewellDrift {
+  0% {
+    transform: translateY(100%) rotate(0deg);
+    opacity: 0;
+  }
+  15% { opacity: 0.25; }
+  85% { opacity: 0.15; }
+  100% {
+    transform: translateY(-120%) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.farewell-emoji {
+  font-size: 64px;
+  margin-bottom: 8px;
+  animation: butterflyFloat 3s ease-in-out infinite;
+  filter: drop-shadow(0 4px 16px rgba(100, 149, 237, 0.25));
+}
+
+@keyframes butterflyFloat {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-8px) rotate(5deg); }
+}
+
+.farewell-title {
+  font-size: 22px;
+  color: #ffb8d0;
+  margin: 0 0 20px;
+  font-weight: 700;
+  text-shadow: 0 2px 12px rgba(231, 76, 124, 0.25);
+}
+
+.farewell-message {
+  text-align: left;
+  max-height: 320px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.farewell-message p {
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: #d4c8dc;
+  margin: 0 0 14px;
+}
+
+.farewell-message p:last-child {
+  margin-bottom: 0;
+}
+
+.farewell-highlight {
+  text-align: center;
+  font-size: 18px !important;
+  font-weight: 700;
+  color: #ff8fb1 !important;
+  margin-top: 20px !important;
+  margin-bottom: 6px !important;
+  background: linear-gradient(90deg, #ff8fb1, #c084fc, #ff8fb1);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+.farewell-smile {
+  text-align: center;
+  font-style: italic;
+  color: #b8a0c8 !important;
+  font-size: 14px !important;
+  margin-top: 4px !important;
+}
+
+.farewell-close-btn {
+  margin-top: 24px;
+  padding: 12px 32px;
+  background: linear-gradient(135deg, #e74c7c, #c2185b);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(231, 76, 124, 0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.farewell-close-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(231, 76, 124, 0.5);
+}
+
+.farewell-close-btn:active {
+  transform: translateY(0);
+}
